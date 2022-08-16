@@ -1,0 +1,526 @@
+/*
+===============================================================================
+ This file contain extra CSS rules to customize the YunoHost user portal and
+ can be used to customize app tiles, buttons, etc...
+===============================================================================
+*/
+/* ------------------------
+		Global Main Setup
+------------------------ */
+@font-face {
+	font-family: "Helvetica Neue";
+	src: url("typo/HelveticaNeue-Regular.ttf");
+}
+@font-face {
+	font-family: 'HelveticaNeueBold';
+	src: url("typo/HelveticaNeue-CondensedBold.ttf");
+}
+
+@font-face {
+	font-family: "Icon Awesome";
+	src: url("typo/FontAwesome.ttf");
+}
+
+html {
+	min-height: 100vh;
+}
+body {
+	line-height: 1;
+}
+* {
+	font-family: "Helvetica Neue", serif;
+}
+/* ------------------------
+		Login Page
+------------------------ */
+
+.element-invisible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+		/* ------------------------
+				Main Setup
+		------------------------ */
+#ynh-logo {
+	/*margin-top: 20%;*/
+	margin-top: 30vh;
+	width: 0;
+	height: 0;
+}
+
+.content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.ynh-user-portal {
+	background-image: url("pictures/background.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: center;
+}
+
+		/* ------------------------
+				Windows Login
+		------------------------ */
+.messages, .login {
+	width: 800px;
+	padding: 0 20px;
+}
+
+.ynh-wrapper {
+	background-image: url("pictures/login-logo.png");
+	background-repeat: no-repeat;
+	background-position-x: 120px;
+	background-position-y: 50px;
+	margin: 0;
+	position: initial;
+}
+.ynh-wrapper::after, .ynh-wrapper::before {
+	content: none;
+}
+
+.messages {
+	position: absolute;
+	border-radius: 0 0 15px 15px;
+	margin-top: 256px;
+	max-width: none;
+
+	color : #82fcdb;
+
+	/* Typo Rules */
+	font-family: 'HelveticaNeueBold', serif;
+	font-size: 1.8em;
+	font-variant: small-caps;
+	text-align: center;
+
+	box-shadow:  8px 8px 8px rgb(16, 28, 22);
+}
+
+.messages.info {
+	background-color: #ad35a7;
+	padding: 0 0 8px 0;
+}
+
+.login {
+	background-color: #f24be9;
+	height: 256px;
+	border-radius: 15px 15px 0 0;
+	box-shadow:  8px 8px 8px rgb(16, 28, 22);
+	border-bottom: 8px solid #ad35a7;
+}
+
+.login-form {
+	width: 50%;
+	margin: 0 5% 0 45%;
+	height: 100%;
+	display: grid;
+	align-content: center;
+}
+.login-form .btn {
+	height: 52px;
+	margin: 8px 0;
+	padding: 0 0 0 60px;
+}
+.login-form .btn:hover {
+	background: url("pictures/picto.jpg") no-repeat 0 52px darkblue;
+}
+
+.login-form .form-group {
+	display: inline-block;
+	height: 52px;
+	margin: 8px 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative; /* Fix Ynh Portal */
+	background: none; /* Fix Ynh Portal */
+}
+.login-form .form-text, .icon-user, .icon-lock {
+	display: inline-block !important;
+	height: 100%;
+}
+.login-form label::before {
+	width: 0;
+	height: 0;
+}
+.icon-user::before, .icon-lock::before { content: none; }
+
+.login-form .form-text {
+	width: calc(100% - 52px);
+	padding: 0 5%;
+	border: 0;
+	font-family: 'HelveticaNeueBold', serif;
+	background-color: #ad35a7;
+	color: #82fcdb;
+	position: relative;
+}
+.login-form .form-text::placeholder {
+	color: #82fcdb;
+}
+
+.icon-user, .icon-lock {
+	float: left;
+	width: 52px;
+}
+.icon-user {
+	background-image: url("pictures/picto.jpg");
+}
+.icon-lock {
+	background-image: url("pictures/picto.jpg");
+	background-position: 0 -52px;
+}
+input[type="submit"] {
+	border: 0;
+	background-image: url("pictures/picto.jpg");
+	background-position: 0 -102px;
+	background-repeat: repeat-y;
+	background-color: #ad35a7;
+
+	/* Typo Setup */
+	font-family: 'HelveticaNeueBold', serif;
+	color: #82fcdb;
+	text-align: left;
+}
+
+/* ------------------------
+		Apps Tile Page
+------------------------ */
+		/* ------------------------
+				Main Setup
+		------------------------ */
+body.logged, .logged .content {
+	min-height: 100vh;
+}
+.logged {
+	margin: 0;
+	padding: 0;
+	position: unset;
+}
+
+.logged .content {
+	max-width: 100%;
+}
+.logged .messages {
+	max-width: 0;
+	max-height: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.logged .user {
+	height: 92vh;
+}
+
+.logged .user-menu {
+	float: none;
+	display: inline;
+}
+.logged .user-menu li {
+	text-align: right;
+}
+.logged .user-menu a {
+	margin: 0;
+	padding: 16px;
+	color: #82fcdb;
+}
+		/* ------------------------
+				Pannel
+		------------------------ */
+.logged .user, .logged .footer {
+	width: 30%;
+	background-image: none;
+	background-color: #ad35a7;
+	border-right: 0.6em solid #f24be9;
+	padding-top: 64px;
+}
+		/* ------------------------
+				User
+		------------------------ */
+.user-container {
+    display: block;
+    position: relative;
+    max-width: 100%;
+	line-height: 2.6em;
+	margin: 0;
+	padding: 16px 0 0;
+	background-color: #f24be9;
+	color: #82fcdb;
+	text-align: center;
+}
+.user-container::before{
+	content: none;
+}
+.user-container::before {
+	color: inherit;
+}
+.user-container .user-username, .user-container-edit .user-username {
+	display: inline-block;
+	width: 80%;
+	margin: 0 10%;
+	min-height: 82px;
+	font-size: 2.6em;
+	text-align: left;
+}
+.user-container .user-username::after, .user-container-edit .user-username::after {
+	font-family: "Icon Awesome", serif;
+	content: "\f044";
+	color: #82fcdb;
+	font-size: 0.8em;
+    width: 1em;
+    height: 1em;
+    margin-left: .5em;
+	vertical-align: baseline;
+}
+.user-container .user-fullname, .user-container .user-mail {
+	display: inline;
+	font-size: 1em;
+	text-align: center;
+	padding: 6px 0 0;
+}
+.user-container .user-fullname {
+	display: block;
+	text-align: left;
+	padding: 0 10%;
+}
+.user-container .user-mail {
+	float: right;
+	color: #82fcdb;
+	margin: 0;
+	padding: 0 10%;
+	text-align: right;
+}
+.user-container .user-fullname:before {
+	content: "Hallo! ";
+}
+.user-container .user-username:before {
+    display: block;
+    position: relative;
+    float: left;
+    content: url("pictures/user.png");
+    width: 82px;
+	height: 82px;
+	size: 16px;
+}
+		/* ------------------------
+				Yunohost Icon
+		------------------------ */
+.logged #ynh-logo {
+	margin: 0 0 8vh;
+	padding: 0 108px 0 0;
+	width: 29%;
+	height: 85px;
+	line-height: 85px;
+	left: 0;
+	text-align: right;
+	background-position: right;
+	color: #82fcdb;
+	font-variant: small-caps;
+	font-family: 'HelveticaNeueBold', serif;
+
+}
+.logged #ynh-logo:before {
+	content: "Powered by ";
+}
+		/* ------------------------
+				Logout Icon
+		------------------------ */
+.icon-connexion {
+	color: #82fcdb;
+}
+.icon-connexion::before {
+    color: #82fcdb;
+}
+		/* ------------------------
+				Setup Footer
+		------------------------ */
+.logged .footer {
+	height: 8vh;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-right: 0.6em solid #f24be9;
+}
+.logged .footer nav {
+	width: 85%;
+	margin: 0 auto;
+	padding: 8px 0;
+	text-align: center;
+	border-top: 2px #82fcdb solid;
+}
+.logged .footer a {
+	font-family: 'HelveticaNeueBold', serif;
+	font-size: .9em;
+	text-decoration: none;
+	color: #82fcdb;
+	letter-spacing: -0.05em;
+}
+.logged .footer a:hover {
+	text-decoration: underline;
+}
+
+.logged .footer a:first-child::before {
+	content: none;
+}
+
+.logged .footer a::before {
+    content: "•";
+	font-size: 1.3em;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0.5em 0 0.25em;
+    /* color: #666; */
+}
+
+		/* ------------------------
+				Setup Apps Tile
+		------------------------ */
+#apps {
+	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 70%;
+	min-height: 100vh;
+	margin: 0;
+}
+
+#apps ul {
+	width: 95%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 10% 0;
+	letter-spacing: initial;
+	text-align: center;
+}
+#apps ul li {
+	margin: 1em;
+	font-variant: small-caps;
+	box-shadow: none;
+}
+
+#apps ul li a {
+	background: rgb(173,53,167);
+	background: linear-gradient(0deg, rgba(173,53,167,1) 0%, rgba(242,75,233,1) 100%);
+	border-radius: 5px 5px 0 0;
+	box-shadow: 6px 6px 6px #101c16;
+	color: #82fcdb;
+}
+
+.listing-apps a:hover {
+	top: 0;
+	left: 0;
+	border: 30px solid #f24be9;
+	transform: rotate(7deg);
+}
+.listing-apps a::after, .listing-apps a::before, .listing-apps a:hover::after, .listing-apps a:hover::before {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: none;
+	content: none;
+	overflow: hidden;
+}
+
+.listing-apps a .name {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	margin: 0;
+	padding: 6px 5%;
+	text-align: left;
+	background: #f24be9;
+	line-height: 1.4em;
+	overflow: hidden;
+}
+.listing-apps a:hover .name {
+	height: 0;
+	line-height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	animation: nameopa 0.3s;
+}
+@keyframes nameopa {
+	from {
+		height: auto;
+		line-height: inherit;
+		padding-top: 6px;
+		padding-bottom: 6px;}
+	to { height:0;
+		line-height: 0;
+		padding-top: 0;
+		padding-bottom: 0;}  }
+
+.listing-apps a .first-letter {
+	font-family: 'HelveticaNeueBold', serif;
+	line-height: 2em;
+}
+
+.listing-apps a:hover .first-letter {
+	width: 100%;
+	height: 100%;
+	display: inline;
+	position: relative;
+	top: -30px;
+	animation: movetop 0.3s;
+}
+@keyframes movetop {
+	from { top: 0; }
+	to { top:-30px; }  }
+/* ------------------------
+		Page Edit User
+------------------------ */
+		/* ------------------------
+				Main Setup
+		------------------------ */
+.logged .edit, .logged .password {
+	float: right;
+	width: 60%;
+	position: absolute;
+	top: 0;
+	right: 5%;
+}
+
+.logged .ynh-wrapper {
+	background-image: none;
+}
+.user-container-edit::after {
+	content: none;
+}
+.form-text {
+	color: #82fcdb;
+	background: url("pictures/picto.jpg") no-repeat 0 -156px #ad35a7;
+	padding-left: 60px;
+	font-family: 'HelveticaNeueBold', serif;
+}
+.form-text:hover {
+	background-color: #f24be9;
+}
+.edit .large-btn, input[value="OK"] {
+	background-image: none;
+}
+.edit .large-btn:hover {
+	background-color: white;
+}
+.btn {
+	font-family: "HelveticaNeueBold", serif;
+}
+.btn-group .btn:hover {
+	background-color: #f24be9;
+}
+.form-group .control-label {
+	padding: 0.6em 1em;
+}
+.user-container-edit .user-username::after {
+	content: "\f00d";
+}

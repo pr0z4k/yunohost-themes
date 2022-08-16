@@ -1,0 +1,20 @@
+{
+    "name": "miami-vibes",
+    "id": "miami-vibes",
+    "packaging_format": 1,
+    "description": {
+        "en": "An illustrated theme.",
+        "fr": "Un theme illustrer."
+    },
+    "version": "0.7.0",
+    "url": "https://github.com/pr0z4k/yunohost-themes",
+    "license": "AGPL-3.0",
+    "maintainer": {
+        "name": "Prozak",
+        "email": "prozak@kernel.mx"
+    },
+    "requirements": {
+        "yunohost": ">= 3.7.0.12",
+        "ssowat": ">= 3.7.0.12"
+    }
+}
