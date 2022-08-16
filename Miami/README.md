@@ -4,6 +4,7 @@ A simple theme for [Yunohost](https://yunohost.org), based on an illustration by
 Sources: 
 
 Wallpaper: https://www.artstation.com/artwork/GXwZgz
+
 Nature-Mount theme: https://github.com/yunohost-themes/Nature-Mount
 
 ## How to install
